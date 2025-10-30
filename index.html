@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Taschenratte</title>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+  <style>
+    .block1, .block7 {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="block block1">
+      <div class="blockX">До бою, командире!</div>
+    </div>
+    <div class="main">
+      <div class="left-column">
+        <div class="block block2">
+          <img src="../pictures/germany_small.png" alt="flag">
+        </div>
+        <div class="block block5">
+          <p>Нові танки ХІ рівня:</p>
+          <ul>
+            <li><a href="page2.html">Taschenratte</a></li>
+            <li><a href="#">FV 4025 Contiver</a></li>
+            <li><a href="#">Leopard 120 Verbessert</a></li>
+            <li><a href="#">CS-67 Szakal</a></li>
+            <li><a href="#">AT-FV230 Breaker</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="center-column">
+        <div class="block block3">
+          <img src="../pictures/tash.png" alt="tank" usemap="#tankmap">
+          <map name="tankmap">
+            <area shape="rect" coords="263,4,938,767" alt="Tank" href="https://worldoftanks.eu/uk/news/general-news/update-2-0-tier-11-heavy-tanks/">
+          </map>
+        </div>
+        <div class="block block6">
+          <h1>Особлива навичка</h1>
+          <p>Допоміжне озброєння: натискання кнопки активації запускає допоміжне озброєння вашої машини, що починає вести вогонь по цілі. Ця додаткова вогнева міць має власний цикл перезаряджання — незалежний від основної гармати.</p>
+        </div>
+      </div>
+<div class="block block4">
+    <h3>Конструктор "Glitch Text"</h3>
+
+    <label for="glitchText">Текст:</label>
+    <input type="text" id="glitchText">
+
+    <label for="glitchCSS">CSS-інструкції:</label>
+    <textarea id="glitchCSS" rows="8" ></textarea>
+
+    <button id="saveButton">Зберегти на сервері
+    
+    </button>
+</div>
+
+<!-- placeholder="Наприклад:
+    .my-glitch {
+    color: red;
+    animation: ...
+    }
+    @keyframes ... { ... }" -->
+
+
+
+
+
+    </div>
+    <div class="block block7">
+      <div class="blockY">Грай на новому рівні!</div>
+    </div>
+  </div>
+    
+    <script>
+    // Знаходимо наші елементи на сторінці
+    const textInput = document.getElementById('glitchText');
+    const cssInput = document.getElementById('glitchCSS');
+    const saveButton = document.getElementById('saveButton');
+
+    // 1. СТВОРЮЄМО ЗМІННУ З CSS ЗА ЗАМОВЧУВАННЯМ
+    const defaultCSS = `.my-glitch {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  2%, 64% { transform: translate(2px, 0) skew(0deg); }
+  4%, 60% { transform: translate(-2px, 0) skew(0deg); }
+  62% { transform: translate(0, 0) skew(5deg); }
+}
+
+.my-glitch::before,
+.my-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(28,28,30); /* Колір фону вашого .block4 */
+  overflow: hidden;
+}
+
+.my-glitch::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  animation: glitch-anim-1 2s linear infinite reverse;
+}
+
+.my-glitch::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  animation: glitch-anim-2 2s linear infinite reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(5% 0 90% 0); }
+  100% { clip-path: inset(70% 0 5% 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(80% 0 10% 0); }
+  100% { clip-path: inset(10% 0 85% 0); }
+}`;
+    
+    // 2. ВСТАНОВЛЮЄМО ЦІ ЗНАЧЕННЯ У ФОРМУ
+    //    Це заповнить поля, щойно сторінка завантажиться
+    textInput.value = "GLITCH TEXT";
+    cssInput.value = defaultCSS.trim();
+
+
+    // 3. Код для кнопки (залишається як був)
+    saveButton.addEventListener('click', async (e) => {
+      e.preventDefault(); 
+      
+      const data = {
+        text: textInput.value,
+        css: cssInput.value
+      };
+
+      try {
+        const response = await fetch('api.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data) 
+        });
+        
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+          alert('Збережено!');
+        } else {
+          alert('Помилка збереження: ' + (result.message || ''));
+        }
+      } catch (error) {
+        console.error('Помилка:', error);
+        alert('Помилка відправки запиту.');
+      }
+    });
+  </script>
+    
+</body>
+</html>
