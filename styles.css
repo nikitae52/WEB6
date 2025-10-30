@@ -1,229 +1,224 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body, html {
-    height: 100vh;
-    font-size: clamp(16px, 1.5vw, 24px);
-    background-color: rgb(28,28,30);
+    height: 100vh;
+    font-size: clamp(16px, 1.5vw, 24px);
+    background-color: rgb(28,28,30);
+    overflow-x: hidden;
 }
 
 a {
-    color: #ffffff;
-    transition: color 0.3s;
-    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #929292;
+    color: #929292;
 }
 
 .container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .main {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
+    display: flex;
+  - flex-direction: row;
+    flex: 1;
 }
 
 .left-column {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
 }
 
 .center-column {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 
 .block {
-    box-sizing: border-box;
-    font-weight: bold;
-    overflow-wrap: anywhere;
+    box-sizing: border-box;
+    font-weight: bold;
+    overflow-wrap: anywhere;
 }
 
 .block1 {
 
-    background-color: rgb(21, 21, 21);
-    text-align: right;
+    background-color: rgb(21, 21, 21);
+    text-align: right;
 }
 
 .block2 {
-    flex: 0 0 auto;
-    background-color: rgb(21, 21, 21);
-    padding: 10px;
+    flex: 0 0 auto;
+    background-color: rgb(21, 21, 21);
+    padding: 10px;
 }
 
 .block3 {
-    flex: 0 0 auto;
-    background-color: rgb(28,28,30);
+    flex: 0 0 auto;
+    background-color: rgb(28,28,30);
 }
 
 .block4 {
-    width: 25%;
-    background-color: rgb(28,28,30);
-    text-align: center;
-    padding: 10px;
-    color: white;
+    width: 25%;
+    background-color: rgb(28,28,30);
+    text-align: center;
+    padding: 10px;
+    color: white;
 	overflow-wrap: break-word;
-    font-size: 1rem;
-/* 1. Встановлюємо розмір шрифту */
-    /* Колір h3 та label успадковується з .block4 { color: white; } з минулого файлу. 
-       Якщо він зник, додайте 'color: white;' сюди. */
+    font-size: 1rem;
 }
 
 .block4 label,
 .block4 input[type="text"],
 .block4 textarea,
 .block4 button {
-    /* 2, 3. Кожен елемент тепер на новому рядку */
-    display: block;
-    width: 90%;
-    margin: 10px auto; /* Додаємо відступи */
-    box-sizing: border-box;
-    font-size: 1.3rem;
+    display: block;
+    width: 90%;
+    margin: 10px auto; 
+    box-sizing: border-box;
+    font-size: 1.3rem;
 }
 
 .block4 label {
-    text-align: left; /* Вирівнюємо текст для читабельності */
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 1.3rem;
-    color: white; /* Явно вкажемо колір, якщо він не успадковується */
+    text-align: left; 
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    color: white; 
 }
 .block4 button {
-    padding: 10px;
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-}   
+    padding: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}   
 
 .block4 input[type="text"],
 .block4 textarea {
-     padding: 8px;
-     background-color: #333;
-     color: white; /* Вимога 1: Білий текст всередині полів */
-     border: 1px solid #555;
+     padding: 8px;
+     background-color: #333;
+     color: white; 
+     border: 1px solid #555;
 }
 .block4 h3 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    padding: 10px;
-    color: white; /* Явно вкажемо колір, якщо він не успадковується */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    padding: 10px;
+    color: white; 
 }
 
-/* --- Ось ЗМІНИ --- */
 .block4 textarea {
-    height: 250px; /* Вимога 2: Збільшена висота */
-    resize: none;  /* Вимога 3: Фіксований розмір (заборона розтягування) */
-    font-size: 0.5rem; /* Вимога 4: Розмір шрифту 1rem */
+    height: 250px; 
+    resize: none;  
+    font-size: 0.5rem; 
 }
-/* --- Кінець ЗМІН --- */
 
 .block5 {
-    flex: 0 0 auto;
-    background-color: rgb(28,28,30);
-    padding: 10px 10px 30px 10px;
-    margin-bottom: 20px;
+    flex: 0 0 auto;
+    background-color: rgb(28,28,30);
+    padding: 10px 10px 30px 10px;
+    margin-bottom: 20px;
 }
 
 .block5 li, .block4 li {
-    color: white;
-    margin: 20px 0;
-    padding-left: 0;
-    list-style-position: inside;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    font-size: clamp(5px, 2vw, 33px);
+    color: white;
+    margin: 20px 0;
+    padding-left: 0;
+    list-style-position: inside;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: clamp(5px, 2vw, 33px);
 }
 
 .block5 p {
-    font-size: clamp(14px, 2vw, 33px);
-    font-weight: bold;
-    color: white;
-    text-align: left;
-    padding-left: 20px;
-    margin-bottom: 15px;
+    font-size: clamp(14px, 2vw, 33px);
+    font-weight: bold;
+    color: white;
+  t ext-align: left;
+    padding-left: 20px;
+    margin-bottom: 15px;
 }
 
 .block6 {
-    font-family: "Anton", sans-serif;
-    font-size: clamp(13px, 2vw, 32px);
-    flex: 0 0 auto;
-    background-color: #000000;
-    color: white;
-    white-space: normal;
-    padding: 10px;
-    box-sizing: border-box;
+    font-family: "Anton", sans-serif;
+    font-size: clamp(13px, 2vw, 32px);
+    flex: 0 0 auto;
+    background-color: #000000;
+    color: white;
+    white-space: normal;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .block6 h1 {
-    font-size: clamp(20px, 2.5vw, 40px);
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
+    font-size: clamp(20px, 2.5vw, 40px);
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .block7 {
-    flex-basis: 10%;
-    background-color: rgb(21, 21, 21);
-    text-align: right;
-    padding: 10px;
+    flex-basis: 10%;
+    background-color: rgb(21, 21, 21);
+    text-align: right;
+    padding: 10px;
 }
 
 .block img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blockX, .blockY {
-    font-size: clamp(20px, 4vw, 60px);
-    color: white;
-    padding: 2vw;
-    display: inline-block;
-    font-family: "Anton", sans-serif;
-    max-width: 80%;
+    font-size: clamp(20px, 4vw, 60px);
+  Node color: white;
+    padding: 2vw;
+    display: inline-block;
+    font-family: "Anton", sans-serif;
+    max-width: 80%;
 }
 
 .blockX {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .blockY {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 ol, ul {
-    padding-left: 1rem;
-    margin: 0 auto;
-    max-width: 80%;
-    text-align: left;
+    padding-left: 1rem;
+    margin: 0 auto;
+    max-width: 80%;
+    text-align: left;
 }
 
 ol {
-    list-style-type: decimal;
+    list-style-type: decimal;
 }
 
 ul {
-    list-style-type: disc;
+    list-style-type: disc;
 }
